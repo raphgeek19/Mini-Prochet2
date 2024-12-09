@@ -1,0 +1,195 @@
+/* Variables globales */
+:root {
+    --primary-glow: rgba(255, 215, 0, 0.3);
+    --secondary-color: #87ceeb;
+    --background-dark: #0a0a0a;
+    --background-card: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --gradient-gold: linear-gradient(135deg, #00ccff, #00ccff);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Style général */
+.media-content {
+    padding: 2rem;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+/* Sections */
+.media-section {
+    margin-bottom: 4rem;
+}
+
+.media-section h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.category-container {
+    margin-bottom: 3rem;
+}
+
+.category-container h3 {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Grille des médias */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* Cartes des médias */
+.media-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    background: var(--background-card);
+}
+
+.media-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
+}
+
+.media-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.media-card:hover img {
+    transform: scale(1.1);
+}
+
+.media-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: var(--text-primary);
+}
+
+.media-info h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    position: relative;
+    background: linear-gradient(165deg, #1a1a1a 0%, #0a0a0a 100%);
+    color: var(--text-primary);
+    width: 95%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 3rem;
+    border-radius: 25px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.close-button {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 215, 0, 0.1);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+    z-index: 1001;
+}
+
+.close-button:hover {
+    background: var(--primary-color);
+    color: var(--background-dark);
+    transform: rotate(180deg);
+}
+
+/* Contenu de la modal */
+.media-details {
+    padding: 2rem;
+}
+
+.media-details h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.media-details .content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+}
+
+.media-details img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.media-details .info {
+    color: var(--text-secondary);
+}
+
+.media-details .info h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.media-details .info p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .media-details .content {
+        grid-template-columns: 1fr;
+    }
+
+    .media-details img {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+} 

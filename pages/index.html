@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars - Univers</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="../audio/star_wars_cantina.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'élément audio.
+    </audio>
+
+    <header>
+        <h1>Bienvenue dans l'univers de Star Wars</h1>
+        <nav>
+            <a href="../pages/films.html">Les 9 Films</a>
+            <a href="../pages/univers.html">Univers Canon et Légende</a>
+            <a href="../pages/media.html">Livres et Jeux Vidéo</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>À propos de Star Wars</h2>
+        <p>Il y a bien longtemps, dans une galaxie lointaine, très lointaine...</p>
+        
+        <div class="intro-text">
+            <p>Star Wars est bien plus qu'une simple saga cinématographique. C'est un univers riche et complexe qui s'étend sur des milliers d'années d'histoire galactique, peuplé de personnages légendaires, de créatures extraordinaires et de technologies futuristes.</p>
+        </div>
+
+        <div class="main-elements">
+            <h3>Les Éléments Fondamentaux</h3>
+            <ul>
+                <li><strong>La Force :</strong> Une énergie mystique qui relie tous les êtres vivants dans la galaxie. Elle peut être utilisée par les Jedi et les Sith.</li>
+                <li><strong>L'Ordre Jedi :</strong> Les gardiens de la paix et de la justice dans la galaxie, maniant la Force pour le bien.</li>
+                <li><strong>L'Empire et la Rébellion :</strong> Le conflit central opposant un régime totalitaire à ceux qui luttent pour la liberté.</li>
+            </ul>
+        </div>
+
+        <div class="universe-content">
+            <h3>Un Univers en Expansion</h3>
+            <p>L'univers Star Wars se décline à travers :</p>
+            <ul>
+                <li>La saga principale des 9 films retraçant l'histoire des Skywalker</li>
+                <li>Des séries comme The Mandalorian, The Clone Wars, et Obi-Wan Kenobi</li>
+                <li>Des histoires "Canon" officielles validées par Disney</li>
+                <li>L'univers "Légendes" comprenant les récits créés avant le rachat par Disney</li>
+                <li>Des jeux vidéo explorant différentes époques de la galaxie</li>
+                <li>Des romans et bandes dessinées enrichissant l'histoire</li>
+            </ul>
+        </div>
+
+        <div class="explore-more">
+            <h3>Explorez Notre Site</h3>
+            <p>Découvrez en détail :</p>
+            <ul>
+                <li>Les résumés et analyses des 9 films principaux dans notre section "Films"</li>
+                <li>L'histoire complète de l'univers Canon et Légendes</li>
+                <li>Notre collection de livres et jeux vidéo qui enrichissent cet univers fascinant</li>
+            </ul>
+        </div>
+
+        <div class="famous-quote">
+            <p><em>"Que la Force soit avec vous."</em></p>
+        </div>
+
+        <div class="image-gallery">
+            <h3>Les personnages clés</h3>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="../image/vador2.gif" alt="Dark Vador" class="gallery-image">
+                    <p class="image-note">Dark Vador.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="../image/luke.gif" alt="Luke Skywalker" class="gallery-image">
+                    <p class="image-note">Luke Skywalker.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="../image/palpatine.gif" alt="Empereur Palpatine" class="gallery-image">
+                    <p class="image-note">Empereur Palpatine.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="../image/obiwan.gif" alt="Obi-Wan" class="gallery-image">
+                    <p class="image-note">Obi-Wan.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="../image/anakin.gif" alt="Anakin Skywalker" class="gallery-image">
+                    <p class="image-note">Anakin Skywalker.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Univers Star Wars. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('load', function() {
+            var music = document.getElementById('backgroundMusic');
+            music.volume = 2;
+            music.play().catch(function(error) {
+                console.log('La lecture automatique a été bloquée :', error);
+            });
+        });
+    </script>
+</body>
+</html> 

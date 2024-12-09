@@ -1,0 +1,302 @@
+/* Structure principale */
+.films-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style des trilogies */
+.trilogy {
+    margin: 50px 0;
+    padding: 30px;
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* En-têtes des trilogies */
+.trilogy h2 {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.trilogy h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+/* Grille des films */
+.films-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 20px;
+}
+
+/* Cartes des films */
+.film-card {
+    background: var(--background-light);
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.film-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.film-card:hover::before {
+    transform: translateX(100%);
+}
+
+.film-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+}
+
+.film-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.film-card h4 {
+    color: var(--text-color);
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.film-card .year {
+    color: #888;
+    font-size: 1.1em;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Styles spécifiques pour chaque trilogie */
+.prequel {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                url('../assets/images/prequel-bg.jpg') center/cover;
+}
+
+.original {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                url('../assets/images/original-bg.jpg') center/cover;
+}
+
+.sequel {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                url('../assets/images/sequel-bg.jpg') center/cover;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.98);
+    z-index: 1000;
+    overflow-y: auto;
+    backdrop-filter: blur(20px);
+    padding: 20px;
+}
+
+.modal-content {
+    position: relative;
+    background: linear-gradient(165deg, #1a1a1a 0%, #0a0a0a 100%);
+    color: var(--text-primary);
+    width: 95%;
+    max-width: 1600px;
+    margin: 20px auto;
+    padding: 4rem;
+    border-radius: 30px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    transform-style: preserve-3d;
+    min-height: 90vh;
+}
+
+/* Bouton fermeture */
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.close:hover {
+    color: #fff;
+    background: rgba(255, 215, 0, 0.1);
+    transform: rotate(90deg);
+}
+
+/* Contenu modal */
+#modalTitle {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 25px;
+    padding-right: 40px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .films-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trilogy h2 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 600px) {
+    .films-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trilogy {
+        padding: 20px;
+        margin: 30px 0;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+
+    .film-card {
+        padding: 20px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-content {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Styles pour le contenu de la modal */
+.film-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    padding: 1rem;
+}
+
+.film-details .synopsis,
+.film-details .plot-developments {
+    grid-column: 1 / -1;
+}
+
+.film-details h3 {
+    color: var(--primary-color);
+    margin: 20px 0 10px 0;
+    font-size: 1.4em;
+}
+
+.film-details p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.film-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.film-details li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.film-details li::before {
+    content: '•';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+.film-details strong {
+    color: var(--primary-color);
+}
+
+/* Style du titre dans la modal */
+#modalTitle {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    padding-right: 40px;
+}
+
+/* Media Queries pour la responsive */
+@media (max-width: 1200px) {
+    .film-details {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 98%;
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 2rem;
+        margin: 10px auto;
+    }
+}
+
+/* Styles pour les images des films */
+.film-image {
+    width: 100%; /* S'assure que l'image prend toute la largeur de la carte */
+    height: 200px; /* Définit une hauteur fixe pour rendre l'image rectangulaire */
+    object-fit: cover; /* Couvre l'espace sans déformer l'image */
+    border-radius: 10px; /* Arrondit les coins de l'image */
+    margin-bottom: 10px; /* Ajoute un espace en bas de l'image */
+} 

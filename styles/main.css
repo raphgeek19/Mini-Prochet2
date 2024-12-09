@@ -1,0 +1,331 @@
+/* Variables globales */
+:root {
+    --primary-color: #00ccff;
+    --secondary-color: #7b0000;
+    --background-dark: #000000;
+    --background-light: #1c1c1c;
+    --text-color: #ffffff;
+    --transition-speed: 0.3s;
+}
+
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: #000000;
+    background-attachment: fixed;
+    background-image: url('../image/vador.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Header styles */
+header {
+    background: rgba(28, 28, 28, 0.95);
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(255, 215, 0, 0.2);
+}
+
+header h1 {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 15px 0;
+}
+
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all var(--transition-speed);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    border-color: var(--primary-color);
+    background: rgba(255, 215, 0, 0.1);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* Section principale */
+section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(28, 28, 28, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+}
+
+section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+section h3 {
+    color: var(--primary-color);
+    margin: 20px 0 10px 0;
+}
+
+/* Listes */
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+ul li {
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(123, 0, 0, 0.2);
+    border-radius: 5px;
+    transition: all var(--transition-speed);
+}
+
+ul li:hover {
+    background: rgba(123, 0, 0, 0.3);
+    transform: translateX(10px);
+}
+
+/* Paragraphes */
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--background-light);
+    margin-top: 40px;
+    border-top: 2px solid var(--secondary-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        width: 80%;
+        text-align: center;
+    }
+
+    section {
+        margin: 20px;
+    }
+}
+
+/* Effets spéciaux pour les liens */
+a {
+    position: relative;
+    overflow: hidden;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transition: transform var(--transition-speed);
+}
+
+a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Styles spécifiques pour la page d'accueil */
+.intro-text {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.main-elements, .universe-content, .explore-more {
+    margin: 30px 0;
+}
+
+.famous-quote {
+    text-align: center;
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin: 40px 0 20px 0;
+    font-style: italic;
+}
+
+.main-elements ul li, .universe-content ul li, .explore-more ul li {
+    background: rgba(28, 28, 28, 0.7);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid var(--secondary-color);
+}
+
+.main-elements ul li:hover, .universe-content ul li:hover, .explore-more ul li:hover {
+    background: rgba(28, 28, 28, 0.9);
+    border-left-color: var(--primary-color);
+}
+
+strong {
+    color: var(--primary-color);
+}
+
+/* Styles pour les films */
+.films-list li {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.films-list li:hover {
+    background: rgba(255, 215, 0, 0.2);
+    padding-left: 25px;
+}
+
+/* Styles pour la modale */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    background-color: var(--background-light);
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid var(--primary-color);
+    width: 70%;
+    max-width: 700px;
+    border-radius: 10px;
+    position: relative;
+    animation: slideIn 0.3s ease-in-out;
+}
+
+.close {
+    color: var(--primary-color);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #fff;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.image-gallery {
+    margin: 30px 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.gallery-item {
+    flex: 0 1 30%;
+    margin: 10px;
+}
+
+.gallery-image {
+    width: 100%; /* Prend toute la largeur du conteneur */
+    height: 200px; /* Définit une hauteur fixe pour rendre l'image rectangulaire */
+    object-fit: cover; /* Couvre l'espace sans déformer l'image */
+    border-radius: 10px; /* Arrondit les coins des images */
+    margin: 10px 0; /* Ajoute un espace autour des images */
+}
+
+/* Pour les petits écrans, ajustez la largeur */
+@media (max-width: 768px) {
+    .gallery-image {
+        width: 100%; /* Sur les petits écrans, les images prennent toute la largeur */
+        height: auto; /* Permet aux images de conserver leur ratio d'aspect */
+    }
+}
+
+.image-note {
+    text-align: center; /* Centre le texte de la note */
+    color: #00ccff; /* Couleur du texte (bleu clair) */
+    margin-top: 5px; /* Espace au-dessus de la note */
+    font-size: 1em; /* Taille de police pour la note */
+    font-weight: bold; /* Met le texte en gras */
+} 

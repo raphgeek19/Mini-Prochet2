@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars - Films</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/films.css">
+</head>
+<body>
+    <header>
+        <h1>La Saga Star Wars</h1>
+        <nav>
+            <a href="../pages/index.html">Accueil</a>
+            <a href="../pages/univers.html">Univers</a>
+            <a href="../pages/media.html">Livre et Jeux</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="films-container">
+            <!-- Prélogie -->
+            <div class="trilogy prequel">
+                <h2>La Prélogie</h2>
+                <div class="films-grid">
+                    <div class="film-card" onclick="openModal('episode1')">
+                        <img src="../image/sw1.jpg" alt="Épisode I - La Menace Fantôme" class="film-image">
+                        <h3>Épisode I</h3>
+                        <h4>La Menace Fantôme</h4>
+                        <span class="year">1999</span>
+                    </div>
+                    <div class="film-card" onclick="openModal('episode2')">
+                        <img src="../image/sw2.jpg" alt="Épisode II - L'Attaque des Clones" class="film-image">
+                        <h3>Épisode II</h3>
+                        <h4>L'Attaque des Clones</h4>
+                        <span class="year">2002</span>
+                    </div>
+                    <div class="film-card" onclick="openModal('episode3')">
+                        <img src="../image/sw3.webp" alt="Épisode III - La Revanche des Sith" class="film-image">
+                        <h3>Épisode III</h3>
+                        <h4>La Revanche des Sith</h4>
+                        <span class="year">2005</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trilogie Originale -->
+            <div class="trilogy original">
+                <h2>La Trilogie Originale</h2>
+                <div class="films-grid">
+                    <div class="film-card" onclick="openModal('episode4')">
+                        <img src="../image/sw4.jpg" alt="Épisode IV - Un Nouvel Espoir" class="film-image">
+                        <h3>Épisode IV</h3>
+                        <h4>Un Nouvel Espoir</h4>
+                        <span class="year">1977</span>
+                    </div>
+                    <div class="film-card" onclick="openModal('episode5')">
+                        <img src="../image/sw5.jpg" alt="Épisode V - L'Empire Contre-Attaque" class="film-image">
+                        <h3>Épisode V</h3>
+                        <h4>L'Empire Contre-Attaque</h4>
+                        <span class="year">1980</span>
+                    </div>
+                    <div class="film-card" onclick="openModal('episode6')">
+                        <img src="../image/sw6.jpg" alt="Épisode VI - Le Retour du Jedi" class="film-image">
+                        <h3>Épisode VI</h3>
+                        <h4>Le Retour du Jedi</h4>
+                        <span class="year">1983</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nouvelle Trilogie -->
+            <div class="trilogy sequel">
+                <h2>La Nouvelle Trilogie</h2>
+                <div class="films-grid">
+                    <div class="film-card" onclick="openModal('episode7')">
+                        <img src="../image/sw7.jpg" alt="Épisode VII - Le Réveil de la Force" class="film-image">
+                        <h3>Épisode VII</h3>
+                        <h4>Le Réveil de la Force</h4>
+                        <span class="year">2015</span>
+                    </div>
+                    <div class="film-card" onclick="openModal('episode8')">
+                        <img src="../image/sw8.jpg" alt="Épisode VIII - Les Derniers Jedi" class="film-image">
+                        <h3>Épisode VIII</h3>
+                        <h4>Les Derniers Jedi</h4>
+                        <span class="year">2017</span>
+                    </div>
+                    <div class="film-card" onclick="openModal('episode9')">
+                        <img src="../image/sw9.jpg" alt="Épisode IX - L'Ascension de Skywalker" class="film-image">
+                        <h3>Épisode IX</h3>
+                        <h4>L'Ascension de Skywalker</h4>
+                        <span class="year">2019</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <div id="modalContent"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Star Wars Universe</p>
+    </footer>
+
+    <script src="../js/films.js"></script>
+</body>
+</html> 
